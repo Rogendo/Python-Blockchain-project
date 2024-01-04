@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Mined</title>
+</head>
+<body>
+    <h1>Block Mined Successfully!</h1>
+    
+    <p>Block Index: {{ block.index }}</p>
+    <p>Block Hash: {{ block.hash }}</p>
+    <p>Previous Hash: {{ block.previous_hash }}</p>
+
+    <h2>Transactions in this Block:</h2>
+    <ul>
+        {% for transaction in block.transactions %}
+            <li>{{ transaction.sender }} sent {{ transaction.amount }} to {{ transaction.recipient }}</li>
+        {% endfor %}
+    </ul
